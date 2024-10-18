@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:gyde_app/app/app.router.dart';
 import 'package:gyde_app/features/app/app_viewmodel.dart';
@@ -9,38 +10,29 @@ class AppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.reactive(
+    return ViewModelBuilder<AppViewModel>.reactive(
       viewModelBuilder: AppViewModel.new,
-      builder: (_, __, ___) {
-        return const _App();
+      builder: (context, viewModel, child) {
+        return MediaQuery.withClampedTextScaling(
+          maxScaleFactor: 1.5,
+          minScaleFactor: 0.5,
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () {
+              /// Unfocus and hide keyboard when tap on white spaces
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
+            child: MaterialApp(
+              initialRoute: Routes.startupView,
+              onGenerateRoute: StackedRouter().onGenerateRoute,
+              navigatorKey: StackedService.navigatorKey,
+              navigatorObservers: [
+                StackedService.routeObserver,
+              ],
+            ),
+          ),
+        );
       },
-    );
-  }
-}
-
-class _App extends ViewModelWidget<AppViewModel> {
-  const _App();
-
-  @override
-  Widget build(BuildContext context, AppViewModel viewModel) {
-    return MediaQuery.withClampedTextScaling(
-      maxScaleFactor: 1.5,
-      minScaleFactor: 0.5,
-      child: GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTap: () {
-          /// Unfocus and hide keyboard when tap on white spaces
-          FocusManager.instance.primaryFocus?.unfocus();
-        },
-        child: MaterialApp(
-          initialRoute: Routes.startupView,
-          onGenerateRoute: StackedRouter().onGenerateRoute,
-          navigatorKey: StackedService.navigatorKey,
-          navigatorObservers: [
-            StackedService.routeObserver,
-          ],
-        ),
-      ),
     );
   }
 }
