@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:my_app/features/onboarding/verification_code_viewmodel.dart';
 
 class VerificationCodeView extends StatelessWidget {
 	@override
@@ -51,18 +52,5 @@ class VerificationCodeView extends StatelessWidget {
 				),
 			),
 		);
-	}
-}
-
-class VerificationCodeViewModel extends BaseViewModel {
-	String code = '';
-
-	void onCodeChanged(String value) {
-		code = value;
-		notifyListeners();
-	}
-
-	void onContinuePressed() {
-		// Logic to verify the code and navigate to the next page
 	}
 }

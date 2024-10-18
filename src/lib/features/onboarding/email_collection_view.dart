@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:my_app/features/onboarding/email_collection_viewmodel.dart';
 
 class EmailCollectionView extends StatelessWidget {
 	@override
@@ -39,27 +40,5 @@ class EmailCollectionView extends StatelessWidget {
 				),
 			),
 		);
-	}
-}
-
-class EmailCollectionViewModel extends BaseViewModel {
-	final TextEditingController emailController = TextEditingController();
-	bool _isEmailValid = false;
-
-	bool get isEmailValid => _isEmailValid;
-
-	void onEmailChanged(String value) {
-		_isEmailValid = _validateEmail(value);
-		notifyListeners();
-	}
-
-	bool _validateEmail(String email) {
-		// Simple email validation logic
-		final emailRegex = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
-		return emailRegex.hasMatch(email);
-	}
-
-	void onNext() {
-		// Navigate to the next page in the onboarding flow
 	}
 }
