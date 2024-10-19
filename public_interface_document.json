@@ -159,12 +159,12 @@
     },
     {
       "name": "lib/features/onboarding/welcome_view.dart",
-      "description": "The welcome page of the onboarding flow, now using WelcomeViewModel. It contains a StatelessWidget with a build method.",
-      "class_diagram": "@startuml\nclass WelcomeView {\n+build(BuildContext): Widget\n}\n@enduml",
+      "description": "The welcome page of the onboarding flow, now using WelcomeViewModel.",
+      "class_diagram": "@startuml\nclass WelcomeView\n@enduml",
       "methods": [
         {
           "name": "build",
-          "description": "Builds the widget tree for the WelcomeView.",
+          "description": "Builds the widget tree for this screen.",
           "parameters": [
             "BuildContext context"
           ],
@@ -201,12 +201,12 @@
     },
     {
       "name": "lib/features/onboarding/auth_options_view.dart",
-      "description": "The authentication options page of the onboarding flow, now using AuthOptionsViewModel. It contains the AuthOptionsView class which is a StatelessWidget. It has a build method which returns a ViewModelBuilder of AuthOptionsViewModel type.",
+      "description": "The authentication options page of the onboarding flow, now using AuthOptionsViewModel. It includes a build method that returns a ViewModelBuilder of AuthOptionsViewModel type.",
       "class_diagram": "@startuml\nclass AuthOptionsView {\n+build(BuildContext): Widget\n}\n@enduml",
       "methods": [
         {
           "name": "build",
-          "description": "Builds the widget tree for the AuthOptionsView",
+          "description": "Builds the widget tree for the AuthOptionsView. It returns a ViewModelBuilder of AuthOptionsViewModel type.",
           "parameters": [
             "BuildContext context"
           ],
@@ -226,7 +226,7 @@
       "methods": [
         {
           "name": "handleAuthOptionSelected",
-          "description": "Method to handle authentication logic",
+          "description": "Handles the selection of an authentication option.",
           "parameters": [
             "option"
           ],
@@ -234,8 +234,8 @@
         },
         {
           "name": "proceedWithAuthOption",
-          "description": "Method to proceed with the selected authentication option",
-          "parameters": null,
+          "description": "Proceeds with the selected authentication option.",
+          "parameters": [],
           "return_type": "Future<void>"
         }
       ],
@@ -245,12 +245,12 @@
     },
     {
       "name": "lib/features/onboarding/phone_input_view.dart",
-      "description": "The phone number input page of the onboarding flow, now using PhoneInputViewModel. It includes a build method for creating the UI.",
-      "class_diagram": "@startuml\nclass PhoneInputView {\n+build(BuildContext): Widget\n}\n@enduml",
+      "description": "The phone number input page of the onboarding flow, now using PhoneInputViewModel.",
+      "class_diagram": "@startuml\nclass PhoneInputView {\n+Widget build(BuildContext)\n}\n@enduml",
       "methods": [
         {
           "name": "build",
-          "description": "Builds the widget tree for the phone input view.",
+          "description": "Builds the widget tree for this screen.",
           "parameters": [
             "BuildContext context"
           ],
@@ -270,7 +270,7 @@
       "methods": [
         {
           "name": "updatePhoneNumber",
-          "description": "Updates the phone number",
+          "description": "Updates the phone number.",
           "parameters": [
             "newNumber"
           ],
@@ -278,13 +278,13 @@
         },
         {
           "name": "submitPhoneNumber",
-          "description": "Submits the phone number",
+          "description": "Submits the phone number.",
           "parameters": [],
           "return_type": "Future<void>"
         },
         {
           "name": "_isPhoneNumberValid",
-          "description": "Checks if the phone number is valid",
+          "description": "Checks if the phone number is valid.",
           "parameters": [
             "phoneNumber"
           ],
@@ -297,12 +297,12 @@
     },
     {
       "name": "lib/features/onboarding/verification_code_view.dart",
-      "description": "The verification code page of the onboarding flow, now using VerificationCodeViewModel. This file defines a StatelessWidget that builds the UI for the verification code page.",
-      "class_diagram": "@startuml\nclass VerificationCodeView\n@enduml",
+      "description": "The verification code page of the onboarding flow, now using VerificationCodeViewModel.",
+      "class_diagram": "@startuml\nclass VerificationCodeView {\n+build(BuildContext): Widget\n}\n@enduml",
       "methods": [
         {
           "name": "build",
-          "description": "Builds the widget tree for this view.",
+          "description": "Builds the widget tree for VerificationCodeView.",
           "parameters": [
             "BuildContext context"
           ],
@@ -347,12 +347,12 @@
     },
     {
       "name": "lib/features/onboarding/email_collection_view.dart",
-      "description": "The email collection page of the onboarding flow, now using EmailCollectionViewModel. This class builds the UI for the email collection page.",
+      "description": "The email collection page of the onboarding flow, now using EmailCollectionViewModel.",
       "class_diagram": "@startuml\nclass EmailCollectionView {\n+build(BuildContext): Widget\n}\n@enduml",
       "methods": [
         {
           "name": "build",
-          "description": "Builds the widget tree for the email collection page.",
+          "description": "Builds the widget tree for EmailCollectionView.",
           "parameters": [
             "BuildContext context"
           ],
@@ -380,13 +380,13 @@
           "name": "setEmail",
           "description": "Setter for the email",
           "parameters": [
-            "email"
+            "String email"
           ],
           "return_type": "void"
         },
         {
           "name": "submitEmail",
-          "description": "Handles the email submission",
+          "description": "Handles the submission of the email",
           "parameters": null,
           "return_type": "Future<void>"
         }
@@ -397,12 +397,12 @@
     },
     {
       "name": "lib/features/onboarding/welcome_confirmation_view.dart",
-      "description": "The welcome confirmation page of the onboarding flow, now using WelcomeConfirmationViewModel. This file defines a StatelessWidget that builds the UI for the welcome confirmation page.",
+      "description": "The welcome confirmation page of the onboarding flow, now using WelcomeConfirmationViewModel. This page displays a welcome message and a continue button.",
       "class_diagram": "@startuml\nclass WelcomeConfirmationView {\n+build(BuildContext): Widget\n}\n@enduml",
       "methods": [
         {
           "name": "build",
-          "description": "Builds the widget tree for this screen. It uses the ViewModelBuilder to bind the WelcomeConfirmationViewModel to this view.",
+          "description": "Builds the widget tree for this screen. It uses the ViewModelBuilder to bind the WelcomeConfirmationViewModel to this view. The view consists of a Scaffold with an AppBar and a body containing a welcome message and a continue button.",
           "parameters": [
             "BuildContext context"
           ],
@@ -418,7 +418,7 @@
     {
       "name": "lib/features/onboarding/welcome_confirmation_viewmodel.dart",
       "description": "ViewModel for the WelcomeConfirmationView, manages the state and logic.",
-      "class_diagram": "@startuml\nclass WelcomeConfirmationViewModel {\nvoid confirmWelcome()\n}\n@enduml",
+      "class_diagram": "@startuml\nclass WelcomeConfirmationViewModel {\n+void confirmWelcome()\n}\n@enduml",
       "methods": [
         {
           "name": "confirmWelcome",
@@ -434,11 +434,11 @@
     {
       "name": "lib/features/onboarding/terms_conditions_view.dart",
       "description": "The terms and conditions page of the onboarding flow, now using TermsConditionsViewModel.",
-      "class_diagram": "@startuml\nclass TermsConditionsView\n@enduml",
+      "class_diagram": "@startuml\nclass TermsConditionsView {\n+build(BuildContext): Widget\n}\n@enduml",
       "methods": [
         {
           "name": "build",
-          "description": "Builds the widget tree for the terms and conditions page.",
+          "description": "Builds the widget tree for the terms and conditions view.",
           "parameters": [
             "BuildContext context"
           ],
@@ -454,19 +454,25 @@
     {
       "name": "lib/features/onboarding/terms_conditions_viewmodel.dart",
       "description": "ViewModel for the TermsConditionsView, manages the state and logic.",
-      "class_diagram": "@startuml\nclass TermsConditionsViewModel\n@enduml",
+      "class_diagram": "@startuml\nclass TermsConditionsViewModel {\n+bool _termsAccepted\n+bool get termsAccepted()\n+void toggleTermsAccepted()\n+void onAcceptTerms()\n}\n@enduml",
       "methods": [
+        {
+          "name": "termsAccepted",
+          "description": "Getter for the acceptance status of the terms",
+          "parameters": null,
+          "return_type": "bool"
+        },
         {
           "name": "toggleTermsAccepted",
           "description": "Method to update the acceptance status",
           "parameters": null,
-          "return_type": null
+          "return_type": "void"
         },
         {
           "name": "onAcceptTerms",
           "description": "Method to handle the logic for when terms are accepted",
           "parameters": null,
-          "return_type": null
+          "return_type": "void"
         }
       ],
       "dependencies": [
