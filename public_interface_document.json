@@ -307,6 +307,363 @@
         "package:my_app/app/app.locator.dart",
         "package:my_app/features/app/app_view.dart"
       ]
+    },
+    {
+      "name": "src/lib/app/app.dart",
+      "description": "This file defines the main application class and its dependencies, routes, dialogs, and bottom sheets.",
+      "class_diagram": "",
+      "methods": [],
+      "dependencies": [
+        "package:gyde_app/ui/bottom_sheets/notice/notice_sheet.dart",
+        "package:gyde_app/ui/dialogs/info_alert/info_alert_dialog.dart",
+        "package:gyde_app/features/home/home_view.dart",
+        "package:gyde_app/features/startup/startup_view.dart",
+        "package:gyde_app/features/onboarding/welcome_view.dart",
+        "package:gyde_app/features/onboarding/auth_options_view.dart",
+        "package:gyde_app/features/onboarding/phone_input_view.dart",
+        "package:gyde_app/features/onboarding/verification_code_view.dart",
+        "package:gyde_app/features/onboarding/email_collection_view.dart",
+        "package:gyde_app/features/onboarding/welcome_confirmation_view.dart",
+        "package:gyde_app/features/onboarding/terms_conditions_view.dart",
+        "package:stacked/stacked_annotations.dart",
+        "package:stacked_services/stacked_services.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/home/home_viewmodel.dart",
+      "description": "This file defines the HomeViewModel class, which extends the BaseViewModel class. It contains methods to show a dialog and a bottom sheet.",
+      "class_diagram": "",
+      "methods": [
+        {
+          "name": "showDialog",
+          "description": "This method shows a custom dialog with a specific variant, title, and description.",
+          "parameters": [],
+          "return_type": null
+        },
+        {
+          "name": "showBottomSheet",
+          "description": "This method shows a custom bottom sheet with a specific variant, title, and description.",
+          "parameters": [],
+          "return_type": null
+        }
+      ],
+      "dependencies": [
+        "package:gyde_app/app/app.bottomsheets.dart",
+        "package:gyde_app/app/app.dialogs.dart",
+        "package:gyde_app/app/app.locator.dart",
+        "package:stacked/stacked.dart",
+        "package:stacked_services/stacked_services.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/onboarding/auth_options_view.dart",
+      "description": "This file defines the AuthOptionsView class, a StatelessWidget that provides the user with authentication options during onboarding.",
+      "class_diagram": "",
+      "methods": [
+        {
+          "name": "build",
+          "description": "Builds the widget tree for this view.",
+          "parameters": [
+            "BuildContext context"
+          ],
+          "return_type": "Widget"
+        }
+      ],
+      "dependencies": [
+        "package:flutter/material.dart",
+        "package:stacked/stacked.dart",
+        "auth_options_viewmodel.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/onboarding/auth_options_viewmodel.dart",
+      "description": "This file defines the AuthOptionsViewModel class, which extends the BaseViewModel class and includes methods for handling authentication options.",
+      "class_diagram": "",
+      "methods": [
+        {
+          "name": "handleAuthOptionSelected",
+          "description": "Handles the logic for when an authentication option is selected.",
+          "parameters": [
+            "option"
+          ],
+          "return_type": null
+        },
+        {
+          "name": "proceedWithAuthOption",
+          "description": "Proceeds with the selected authentication option, performing necessary operations and state updates.",
+          "parameters": [],
+          "return_type": "Future<void>"
+        }
+      ],
+      "dependencies": [
+        "package:stacked/stacked.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/onboarding/email_collection_view.dart",
+      "description": "This file defines a StatelessWidget that collects the user's email address during the onboarding process.",
+      "class_diagram": "",
+      "methods": [
+        {
+          "name": "build",
+          "description": "Builds the widget tree for this screen.",
+          "parameters": [
+            "BuildContext context"
+          ],
+          "return_type": "Widget"
+        }
+      ],
+      "dependencies": [
+        "package:flutter/material.dart",
+        "package:stacked/stacked.dart",
+        "package:my_app/features/onboarding/email_collection_viewmodel.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/onboarding/email_collection_viewmodel.dart",
+      "description": "This file defines the EmailCollectionViewModel class, which extends the BaseViewModel class from the stacked package. It includes methods for setting and submitting an email.",
+      "class_diagram": "",
+      "methods": [
+        {
+          "name": "setEmail",
+          "description": "Sets the email property of the EmailCollectionViewModel instance.",
+          "parameters": [
+            "email"
+          ],
+          "return_type": "void"
+        },
+        {
+          "name": "submitEmail",
+          "description": "Submits the email. This method is asynchronous and may include logic to handle email submission, such as an API call.",
+          "parameters": [],
+          "return_type": "Future<void>"
+        }
+      ],
+      "dependencies": [
+        "package:stacked/stacked.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/onboarding/phone_input_view.dart",
+      "description": "This file defines a PhoneInputView class which is a StatelessWidget. It provides a user interface for phone number input during the onboarding process.",
+      "class_diagram": "",
+      "methods": [
+        {
+          "name": "build",
+          "description": "Builds the widget tree for the phone input view.",
+          "parameters": [
+            "BuildContext context"
+          ],
+          "return_type": "Widget"
+        }
+      ],
+      "dependencies": [
+        "package:flutter/material.dart",
+        "package:stacked/stacked.dart",
+        "package:my_app/features/onboarding/phone_input_viewmodel.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/onboarding/phone_input_viewmodel.dart",
+      "description": "This file defines the PhoneInputViewModel class, which extends the BaseViewModel class. It is responsible for handling the logic related to phone number input, including updating the phone number, submitting the phone number, and validating the phone number.",
+      "class_diagram": "",
+      "methods": [
+        {
+          "name": "updatePhoneNumber",
+          "description": "Updates the phone number.",
+          "parameters": [
+            "newNumber"
+          ],
+          "return_type": "void"
+        },
+        {
+          "name": "submitPhoneNumber",
+          "description": "Submits the phone number. If the phone number is valid, it navigates to the next view. Otherwise, it shows a validation error.",
+          "parameters": [],
+          "return_type": "Future<void>"
+        },
+        {
+          "name": "_isPhoneNumberValid",
+          "description": "Validates the phone number. Returns true if the phone number is not empty and has a length of 10.",
+          "parameters": [
+            "phoneNumber"
+          ],
+          "return_type": "bool"
+        }
+      ],
+      "dependencies": [
+        "package:stacked/stacked.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/onboarding/terms_conditions_view.dart",
+      "description": "This file defines the TermsConditionsView class, which is a StatelessWidget that displays the terms and conditions of the app.",
+      "class_diagram": "",
+      "methods": [
+        {
+          "name": "build",
+          "description": "Builds the widget tree for the terms and conditions view.",
+          "parameters": [
+            "BuildContext context"
+          ],
+          "return_type": "Widget"
+        }
+      ],
+      "dependencies": [
+        "package:flutter/material.dart",
+        "package:stacked/stacked.dart",
+        "package:my_app/features/onboarding/terms_conditions_viewmodel.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/onboarding/terms_conditions_viewmodel.dart",
+      "description": "This file defines the ViewModel for the Terms and Conditions view in the onboarding process. It manages the state and logic related to the terms and conditions view.",
+      "class_diagram": "",
+      "methods": [
+        {
+          "name": "toggleTermsAccepted",
+          "description": "Method to update the acceptance status",
+          "parameters": null,
+          "return_type": "void"
+        },
+        {
+          "name": "onAcceptTerms",
+          "description": "Method to handle the logic for when terms are accepted",
+          "parameters": null,
+          "return_type": "void"
+        }
+      ],
+      "dependencies": [
+        "package:stacked/stacked.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/onboarding/verification_code_view.dart",
+      "description": "This file defines a VerificationCodeView class which is a StatelessWidget. It provides a view for the user to enter their verification code.",
+      "class_diagram": "",
+      "methods": [
+        {
+          "name": "build",
+          "description": "Builds the widget tree for this view.",
+          "parameters": [
+            "BuildContext context"
+          ],
+          "return_type": "Widget"
+        }
+      ],
+      "dependencies": [
+        "package:flutter/material.dart",
+        "package:stacked/stacked.dart",
+        "package:my_app/features/onboarding/verification_code_viewmodel.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/onboarding/verification_code_viewmodel.dart",
+      "description": "This file defines the VerificationCodeViewModel class, which extends the BaseViewModel class. It includes methods for setting and getting the verification code, verifying the code, and resending the code.",
+      "class_diagram": "",
+      "methods": [
+        {
+          "name": "setVerificationCode",
+          "description": "Setter for the verification code that updates the UI when changed",
+          "parameters": [
+            "code"
+          ],
+          "return_type": "void"
+        },
+        {
+          "name": "verifyCode",
+          "description": "Method to verify the code entered by the user",
+          "parameters": [],
+          "return_type": "Future<void>"
+        },
+        {
+          "name": "resendCode",
+          "description": "Method to resend the verification code",
+          "parameters": [],
+          "return_type": "Future<void>"
+        }
+      ],
+      "dependencies": [
+        "package:stacked/stacked.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/onboarding/welcome_confirmation_view.dart",
+      "description": "This file defines a StatelessWidget that displays a welcome confirmation view.",
+      "class_diagram": "",
+      "methods": [
+        {
+          "name": "build",
+          "description": "Builds the widget tree for this view.",
+          "parameters": [
+            "BuildContext context"
+          ],
+          "return_type": "Widget"
+        }
+      ],
+      "dependencies": [
+        "package:flutter/material.dart",
+        "package:stacked/stacked.dart",
+        "package:my_app/features/onboarding/welcome_confirmation_viewmodel.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/onboarding/welcome_confirmation_viewmodel.dart",
+      "description": "This file defines the ViewModel for the WelcomeConfirmationView. It extends the BaseViewModel from the stacked package and includes methods for handling the state and logic of the WelcomeConfirmationView.",
+      "class_diagram": "@startuml\nWelcomeConfirmationViewModel <|-- BaseViewModel\nclass WelcomeConfirmationViewModel {\n+void confirmWelcome()\n}\n@enduml",
+      "methods": [
+        {
+          "name": "confirmWelcome",
+          "description": "Handles the confirmation action for the WelcomeConfirmationView.",
+          "parameters": null,
+          "return_type": null
+        }
+      ],
+      "dependencies": [
+        "package:stacked/stacked.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/onboarding/welcome_view.dart",
+      "description": "This file defines the WelcomeView class, which is a StatelessWidget that displays the welcome screen of the application.",
+      "class_diagram": "",
+      "methods": [
+        {
+          "name": "build",
+          "description": "Builds the widget tree for the welcome screen.",
+          "parameters": [
+            "BuildContext context"
+          ],
+          "return_type": "Widget"
+        }
+      ],
+      "dependencies": [
+        "package:flutter/material.dart",
+        "package:stacked/stacked.dart",
+        "package:my_app/features/onboarding/welcome_viewmodel.dart"
+      ]
+    },
+    {
+      "name": "src/lib/features/onboarding/welcome_viewmodel.dart",
+      "description": "This file contains the ViewModel for the WelcomeView. It extends the BaseViewModel from the stacked package and includes methods for initializing the view and handling user interactions.",
+      "class_diagram": "",
+      "methods": [
+        {
+          "name": "initialize",
+          "description": "Initializes any data or state required by the WelcomeView",
+          "parameters": null,
+          "return_type": null
+        },
+        {
+          "name": "onContinueButtonPressed",
+          "description": "Handles user interactions or business logic for when the continue button is pressed",
+          "parameters": null,
+          "return_type": null
+        }
+      ],
+      "dependencies": [
+        "package:stacked/stacked.dart"
+      ]
     }
   ],
   "dependencies": [
